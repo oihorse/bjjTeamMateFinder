@@ -4,6 +4,8 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var xray = require("x-ray");
+
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
@@ -55,6 +57,25 @@ app.use(function(err, req, res, next) {
     error: {}
   });
 });
+
+//var x = new xray();
+
+//app.get('/refresh', function () {
+//    x('http://www.horsegoeswest.com/scrapetest/scrapetest.html', {
+//        title: 'title',
+//        items: x('.coluna', [{
+//            matt: 'h1',
+//            items: x('.luta', [{
+//                time: '.day',
+//                fighter1: '.nome1',
+//                fighter2: '.nome2'
+//            }])
+//        }])
+//    }).write('results.json');
+//
+//    console.log("Refreshed");
+//});
+
 
 
 module.exports = app;
